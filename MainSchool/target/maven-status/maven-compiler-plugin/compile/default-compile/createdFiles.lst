@@ -8,7 +8,6 @@ com\strawhatacademy\model\User.class
 com\strawhatacademy\model\Role.class
 com\strawhatacademy\dao\UserDAO.class
 com\strawhatacademy\ui\DashboardForm.class
-com\strawhatacademy\ui\GradesViewForm$1.class
 com\strawhatacademy\App$1.class
 com\strawhatacademy\ui\LoginForm.class
 com\strawhatacademy\dao\DatabaseConnection.class

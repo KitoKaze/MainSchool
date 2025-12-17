@@ -4,6 +4,8 @@ import com.strawhatacademy.model.Role;
 import com.strawhatacademy.model.User;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.ArrayList; // Added for List implementation
+import java.util.List;      // Added for return type
 
 /**
  * Handles all user authentication and profile creation/retrieval.
@@ -12,7 +14,6 @@ public class UserDAO {
 
     /**
      * Authenticates a user based on username and password.
-     * NOTE: In a real system, the password must be compared using a secure hash library (e.g., BCrypt).
      * @param username The username entered by the user.
      * @param password The password entered by the user.
      * @return A fully populated User object if login is successful, null otherwise.
@@ -38,7 +39,6 @@ public class UserDAO {
 
                 if (rs.next()) {
                     int id = rs.getInt("user_id");
-                    // Convert String role from DB to Java Enum
                     Role role = Role.valueOf(rs.getString("role").toUpperCase());
                     String firstName = rs.getString("first_name");
                     String lastName = rs.getString("last_name");
@@ -54,6 +54,36 @@ public class UserDAO {
             DatabaseConnection.closeConnection(conn);
         }
         return user;
+    }
+
+    /**
+     * Retrieves all users from the system, joining the users and profiles tables.
+     * This is used to map teacher IDs to names in the Subjects UI.
+     * @return A list of all User objects.
+     */
+    public List<User> getAllUsers() {
+        List<User> users = new ArrayList<>();
+        String sql = "SELECT u.user_id, u.username, u.role, p.first_name, p.last_name " +
+                     "FROM users u JOIN profiles p ON u.user_id = p.user_id";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+            
+            while (rs.next()) {
+                Role role = Role.valueOf(rs.getString("role").toUpperCase());
+                users.add(new User(
+                    rs.getInt("user_id"),
+                    rs.getString("username"),
+                    role,
+                    rs.getString("first_name"),
+                    rs.getString("last_name")
+                ));
+            }
+        } catch (SQLException e) {
+            System.err.println("Error fetching all users: " + e.getMessage());
+        }
+        return users;
     }
     
     /**

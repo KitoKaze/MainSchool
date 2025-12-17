@@ -1,17 +1,17 @@
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\App.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\dao\DatabaseConnection.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\dao\GradeDAO.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\dao\SubjectDAO.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\dao\UserDAO.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\model\Grade.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\model\Role.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\model\Student.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\model\Subject.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\model\Teacher.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\model\User.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\ui\DashboardForm.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\ui\GradeEditorForm.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\ui\GradesViewForm.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\ui\LoginForm.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\ui\RegistrationForm.java
-C:\Users\Viewpoint 8\Documents\NetBeansProjects\MainSchool\src\main\java\com\strawhatacademy\ui\SubjectsViewForm.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\App.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\dao\DatabaseConnection.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\dao\GradeDAO.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\dao\SubjectDAO.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\dao\UserDAO.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\model\Grade.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\model\Role.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\model\Student.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\model\Subject.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\model\Teacher.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\model\User.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\ui\DashboardForm.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\ui\GradeEditorForm.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\ui\GradesViewForm.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\ui\LoginForm.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\ui\RegistrationForm.java
+C:\Users\marga\OneDrive\Documents\NetBeansProjects\MainSchool-main\MainSchool\src\main\java\com\strawhatacademy\ui\SubjectsViewForm.java
