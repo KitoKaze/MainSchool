@@ -5,7 +5,6 @@ import com.strawhatacademy.model.User;
 import com.strawhatacademy.model.Role;
 import javax.swing.*;
 import java.awt.*;
-import java.sql.SQLException; // Explicitly import SQLException for better handling
 
 public class RegistrationForm extends JFrame {
 
@@ -16,7 +15,7 @@ public class RegistrationForm extends JFrame {
     private JButton btnRegister;
     private JLabel lblStatus;
     
-    // DAO instance for database interaction (declared final as recommended)
+    // DAO instance for database interaction
     private final UserDAO userDAO = new UserDAO(); 
 
     public RegistrationForm() {
@@ -26,7 +25,7 @@ public class RegistrationForm extends JFrame {
     }
     
     /**
-     * Initializes the UI components (Hard-coded layout).
+     * Initializes the UI components.
      */
     private void initComponents() {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
@@ -46,15 +45,18 @@ public class RegistrationForm extends JFrame {
         txtLastName = new JTextField(20);
         txtRegUsername = new JTextField(20);
         txtRegPassword = new JPasswordField(20);
-        cmbRole = new JComboBox<>(Role.values()); // Populates the dropdown with Role enum values
+        
+        // MODIFIED: Only includes TEACHER and STUDENT. ADMIN is removed.
+        cmbRole = new JComboBox<>(new Role[]{Role.TEACHER, Role.STUDENT}); 
+        
         lblStatus = new JLabel("", SwingConstants.CENTER);
-        lblStatus.setForeground(Color.BLUE);
+        lblStatus.setForeground(Color.RED);
 
         inputPanel.add(new JLabel("First Name:"));
         inputPanel.add(txtFirstName);
         inputPanel.add(new JLabel("Last Name:"));
         inputPanel.add(txtLastName);
-        inputPanel.add(new JLabel("Desired Username:"));
+        inputPanel.add(new JLabel("Username:"));
         inputPanel.add(txtRegUsername);
         inputPanel.add(new JLabel("Password:"));
         inputPanel.add(txtRegPassword);
@@ -62,25 +64,21 @@ public class RegistrationForm extends JFrame {
         inputPanel.add(cmbRole);
 
         add(inputPanel, BorderLayout.CENTER);
+
+        // Footer Panel (Buttons)
+        JPanel footer = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        btnRegister = new JButton("Register Account");
+        btnRegister.addActionListener(e -> registerUser());
+        footer.add(btnRegister);
         
-        // Status and Button Panel (South)
         JPanel southPanel = new JPanel(new BorderLayout());
-        
-        btnRegister = new JButton("Complete Registration");
-        btnRegister.addActionListener(e -> registerNewUser());
-        
         southPanel.add(lblStatus, BorderLayout.NORTH);
-        southPanel.add(btnRegister, BorderLayout.SOUTH);
-        
+        southPanel.add(footer, BorderLayout.SOUTH);
         add(southPanel, BorderLayout.SOUTH);
     }
-    
-    /**
-     * Handles the registration button action, validating and sending data to the DAO.
-     */
-    private void registerNewUser() {
+
+    private void registerUser() {
         try {
-            // 1. Collect and Validate Input
             String firstName = txtFirstName.getText().trim();
             String lastName = txtLastName.getText().trim();
             String username = txtRegUsername.getText().trim();
@@ -92,25 +90,17 @@ public class RegistrationForm extends JFrame {
                 return;
             }
 
-            // 2. Create the User Model object
             User newUser = new User(0, username, role, firstName, lastName);
-            
-            // 3. Call DAO to insert data
             boolean success = userDAO.registerUser(newUser, password);
             
             if (success) {
-                lblStatus.setText("Registration successful! You can now log in.");
-                JOptionPane.showMessageDialog(this, 
-                    "Registration Successful for " + role + "!", 
-                    "Success", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Registration Successful for " + role + "!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 this.dispose(); 
             } else {
-                // If DAO returns false, it often implies a constraint violation (like duplicate username)
-                lblStatus.setText("Registration failed. Username may already exist or connection failed.");
+                lblStatus.setText("Registration failed. Username may exist or connection failed.");
             }
         } catch (Exception ex) {
-            // Catch any unexpected runtime errors (Keep printStackTrace for debugging purposes)
-            lblStatus.setText("An unexpected system error occurred. Check console for details.");
+            lblStatus.setText("An unexpected system error occurred.");
             ex.printStackTrace(); 
         }
     }
