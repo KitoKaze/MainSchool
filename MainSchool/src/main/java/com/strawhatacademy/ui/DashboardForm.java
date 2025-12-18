@@ -106,13 +106,13 @@ public class DashboardForm extends JFrame {
         gbc.weighty = 1.0; 
         gbc.insets = new Insets(10, 0, 10, 0); 
 
-        btnGrade = new JButton("<html><center><font size='10'>📝</font><br><br>View/Manage Grades</center></html>");
+        btnGrade = new JButton("<html><center><font size='10'>📝</font><br><br>Grade</center></html>");
         styleBigButton(btnGrade);
         btnGrade.addActionListener(e -> openGradesView());
         gbc.gridy = 0;
         panel.add(btnGrade, gbc);
 
-        btnSubject = new JButton("<html><center><font size='10'>📖</font><br><br>View/Manage Subjects</center></html>");
+        btnSubject = new JButton("<html><center><font size='10'>📖</font><br><br>Subject</center></html>");
         styleBigButton(btnSubject);
         btnSubject.addActionListener(e -> openSubjectsView());
         gbc.gridy = 1;
